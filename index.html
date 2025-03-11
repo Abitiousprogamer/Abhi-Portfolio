@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AS Edit</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body class="dark-mode">
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#home">AS<span>EDIT</span></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-btn">
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section (Integrated from index1.html) -->
+    <section class="hero" id="home">
+        <div class="background-effect" id="background-effect"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-card">
+                    <div class="profile-image">
+                        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTKqIg3pZGnGVuDbO7piYwe2EBzDMOcMohDv5sIWQ-tnD7ruRla" alt="placeholder">
+                    </div>
+                    <h3 class="profile-name">Abhijeet Singh</h3>
+                    <p class="profile-description">A Multimedia Designer who has developed countless innovative solutions.</p>
+                    <a href="https://google.com/" class="profile-btn">Resume</a>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://gmail.com/" target="_blank" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <div class="text-animation-wrapper">
+                        <h1 class="animated-text">MAKE STORIES<br>COME ALIVE</h1>
+                        <h1 class="animated-text">BRINGING IDEAS<br>TO LIFE</h1>
+                    </div>
+                    <p>Freelance Video Editor collaborating with startups and tech companies</p>
+                    <a href="#contact" class="btn primary-btn">Book a call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">My Work</span>
+                <h2>Featured Projects</h2>
+            </div>
+            <div class="filter-options">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="short-films">Short Films</button>
+                <button class="filter-btn" data-filter="commercials">Commercials</button>
+                <button class="filter-btn" data-filter="music-videos">Music Videos</button>
+            </div>
+            <div class="portfolio-grid">
+                <!-- Short Films -->
+                <div class="portfolio-item short-films" data-category="short-films">
+                    <div class="portfolio-thumb">
+                        <img src="https://marketplace.canva.com/EAFTl0ixW_k/1/0/1131w/canva-black-white-minimal-alone-movie-poster-YZ-0GJ13Nc8.jpg" alt="Short Film Project">
+                        <div class="overlay">
+                            <div class="content">
+                                <h3>"The Last Light"</h3>
+                                <p>A dramatic short film about hope and perseverance</p>
+                                <a href="#" class="btn play-btn" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID"><i class="fas fa-play"></i> Watch</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item short-films" data-category="short-films">
+                    <div class="portfolio-thumb">
+                        <img src="https://indigomusic.com/wp-content/uploads/2024/08/Split-movie-poster-663x1024.jpg" alt="Short Film Project">
+                        <div class="overlay">
+                            <div class="content">
+                                <h3>"Echoes"</h3>
+                                <p>A suspenseful thriller with unique color grading</p>
+                                <a href="#" class="btn play-btn" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID"><i class="fas fa-play"></i> Watch</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Commercials -->
+                <div class="portfolio-item commercials" data-category="commercials">
+                    <div class="portfolio-thumb">
+                        <img src="https://posterhouse.org/wp-content/uploads/2021/05/moonlight_0.jpg" alt="Commercial Project">
+                        <div class="overlay">
+                            <div class="content">
+                                <h3>FitLife Pro</h3>
+                                <p>Dynamic fitness product commercial with motion graphics</p>
+                                <a href="#" class="btn play-btn" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID"><i class="fas fa-play"></i> Watch</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item commercials" data-category="commercials">
+                    <div class="portfolio-thumb">
+                        <img src="https://cdn.prod.website-files.com/6009ec8cda7f305645c9d91b/66a4263d01a185d5ea22eeda_6408f76710a9935109f855d4_smile-min.png" alt="Commercial Project">
+                        <div class="overlay">
+                            <div class="content">
+                                <h3>EcoSmart Tech</h3>
+                                <p>Sleek product showcase with 3D integration</p>
+                                <a href="#" class="btn play-btn" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID"><i class="fas fa-play"></i> Watch</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Music Videos -->
+                <div class="portfolio-item music-videos" data-category="music-videos">
+                    <div class="portfolio-thumb">
+                        <img src="https://i0.wp.com/wherecreativityworks.com/wp-content/uploads/2021/03/1DE580A8-7DC3-4D44-8111-41757F179D2E.jpeg?ssl=1" alt="Music Video Project">
+                        <div class="overlay">
+                            <div class="content">
+                                <h3>"Midnight Dreams" - The Echoes</h3>
+                                <p>Atmospheric music video with surreal transitions</p>
+                                <a href="#" class="btn play-btn" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID"><i class="fas fa-play"></i> Watch</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item music-videos" data-category="music-videos">
+                    <div class="portfolio-thumb">
+                        <img src="https://www.indiewire.com/wp-content/uploads/2019/12/us-1.jpg?w=758" alt="Music Video Project">
+                        <div class="overlay">
+                            <div class="content">
+                                <h3>"Higher Ground" - Nova</h3>
+                                <p>Fast-paced music video with creative visual effects</p>
+                                <a href="#" class="btn play-btn" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID"><i class="fas fa-play"></i> Watch</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTvZ7kU4XAxpJt1CrchjMN3-ITGICA_-PVLguAEn0Knr93_zmhDrEHSEQGlwb897VVQidffqmPosfDFN5Y_Ql_FB4y8ac2NDT-R5ErfPw" alt="Jason Smith - Video Editor">
+                </div>
+                <div class="about-text">
+                    <span class="subtitle">About Me</span>
+                    <h2>Abhijeet Singh</h2>
+                    <p>I'm a passionate video editor with over 8 years of experience in the industry. My editing style focuses on rhythm, emotion, and visual storytelling that captivates audiences and delivers powerful messages.</p>
+                    <p>I've worked with independent filmmakers, advertising agencies, and music artists to create compelling visual content that stands out and leaves a lasting impression.</p>
+                    <div class="skills">
+                        <h3>Technical Skills</h3>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <i class="fab fa-adobe"></i>
+                                <span>Premiere Pro</span>
+                                <div class="skill-level">
+                                    <div class="skill-progress" data-level="100%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-adobe"></i>
+                                <span>After Effects</span>
+                                <div class="skill-level">
+                                    <div class="skill-progress" data-level="85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-film"></i>
+                                <span>Photoshop</span>
+                                <div class="skill-level">
+                                    <div class="skill-progress" data-level="100%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-adobe"></i>
+                                <span>Figma</span>
+                                <div class="skill-level">
+                                    <div class="skill-progress" data-level="70%"></div>
+                                </div>
+                            </div>
+                            <!-- Added skill item from index1.html -->
+                            <div class="skill-item" style="--skill-level: 90%">
+                                <i class="fas fa-code"></i>
+                                <span>Illustrator</span>
+                                <div class="skill-level">
+                                    <div class="skill-progress"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" style="--skill-level: 90%">
+                                <i class="fas fa-code"></i>
+                                <span>Lightroom</span>
+                                <div class="skill-level">
+                                    <div class="skill-progress"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">What I Do</span>
+                <h2>Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Cinematic Editing</h3>
+                    <p>Transform raw footage into compelling narratives with professional pacing, transitions, and storytelling techniques.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Color Grading</h3>
+                    <p>Enhance your footage with professional color correction and stylized color grading to set the perfect mood.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3>Visual Effects</h3>
+                    <p>Add impressive visual effects and compositing to elevate your project with dynamic and engaging elements.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                    <h3>Sound Design</h3>
+                    <p>Create immersive audio experiences with custom sound design, mixing, and audio restoration.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3>Motion Graphics</h3>
+                    <p>Bring your brand to life with custom motion graphics, titles, and animated elements.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>Content Optimization</h3>
+                    <p>Adapt and optimize your content for different platforms and audience engagement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Get In Touch</span>
+                <h2>Contact Me</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>gaurav070kumar2005@gmail.com</p>
+                    <a href="mailto:gaurav070kumar2005@gmail.com" class="contact-link">Send Email</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p>(+91) 93118 58381</p>
+                    <a href="tel:5551234567" class="contact-link">Call Now</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location</h3>
+                    <p>New Delhi, IN</p>
+                    <a href="#" class="contact-link">View Map</a>
+                </div>
+            </div>
+            <div class="contact-form-container">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div class="video-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <iframe width="100%" height="100%" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <a href="#contact" class="floating-contact-btn">
+        <i class="fas fa-envelope"></i>
+        <span class="tooltip">Contact Me</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
