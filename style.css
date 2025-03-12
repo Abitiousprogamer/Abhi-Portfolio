@@ -935,4 +935,56 @@
       }
   }
   
+  /* Show More Button Styles */
+  .show-more-container {
+      text-align: center;
+      margin-top: 50px;
+  }
+  
+  .show-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 35px;
+      background-color: var(--primary-dark);
+      color: white;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+  }
+  
+  .show-more-btn i {
+      transition: transform 0.3s ease;
+  }
+  
+  .show-more-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+  }
+  
+  .show-more-btn:hover i {
+      transform: translateX(5px);
+  }
+  
+  /* All Projects Page Styles */
+  .all-projects {
+      padding-top: 150px; /* Add more padding at top to account for fixed header */
+  }
+  
+  .all-projects .portfolio-grid {
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+  }
+  
+  @media screen and (max-width: 768px) {
+      .all-projects {
+          padding-top: 120px;
+      }
+      
+      .all-projects .portfolio-grid {
+          grid-template-columns: 1fr;
+      }
+  }
+  
   
