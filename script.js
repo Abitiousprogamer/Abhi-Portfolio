@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   const initAll = () => {
+    // Cache frequently used elements
+    const body = document.body;
+    const header = document.querySelector('header');
+    
     // Initialize all sections with their specific settings
     const sectionConfig = {
       home: { count: 60, selector: '.profile-card', interactions: true },
@@ -20,6 +24,60 @@ document.addEventListener('DOMContentLoaded', () => {
         interactions: '.contact-item'
       }
     };
+
+    // Use more efficient event delegation for portfolio filtering
+    const portfolioSection = document.querySelector('.portfolio');
+    if (portfolioSection) {
+      portfolioSection.addEventListener('click', (e) => {
+        const filterBtn = e.target.closest('.filter-btn');
+        if (!filterBtn) return;
+        
+        const filterValue = filterBtn.dataset.filter;
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        document.querySelectorAll('.filter-btn').forEach(btn => 
+          btn.classList.toggle('active', btn === filterBtn));
+        
+        portfolioItems.forEach(item => {
+          const isVisible = filterValue === 'all' || item.dataset.category === filterValue;
+          item.style.display = isVisible ? 'block' : 'none';
+          setTimeout(() => item.classList.toggle('hide', !isVisible), 100);
+        });
+      });
+    }
+
+    // Use Intersection Observer for animations
+    const animationObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal');
+            animationObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    // Batch DOM operations
+    const fragment = document.createDocumentFragment();
+    document.querySelectorAll('[data-animate]').forEach(el => {
+      fragment.appendChild(el);
+      animationObserver.observe(el);
+    });
+    document.body.appendChild(fragment);
+
+    // Optimize scroll handling with requestAnimationFrame
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setActiveLink();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
 
     // Initialize core functionality
     initPortfolioFiltering();
@@ -61,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initTextAnimation();
 
     // Create header particles container
-    const header = document.querySelector('header');
     const particlesContainer = document.createElement('div');
     particlesContainer.className = 'header-particles';
     header.insertBefore(particlesContainer, header.firstChild);
@@ -520,6 +577,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', setActiveLink);
   setActiveLink(); // Set initial active state
+
+  // Handle contact links
+  const emailLink = document.querySelector('a[href^="mailto:"]');
+  const phoneLink = document.querySelector('a[href^="tel:"]');
+
+  if (emailLink) {
+    emailLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const email = emailLink.getAttribute('href').replace('mailto:', '');
+      
+      // Try to open email client
+      try {
+        window.location.href = `mailto:${email}`;
+      } catch (error) {
+        console.error('Error opening email client:', error);
+        // Fallback: Copy email to clipboard
+        navigator.clipboard.writeText(email).then(() => {
+          alert('Email address copied to clipboard!');
+        }).catch(() => {
+          alert('Please email us at: ' + email);
+        });
+      }
+    });
+  }
+
+  if (phoneLink) {
+    phoneLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const phone = phoneLink.getAttribute('href').replace('tel:', '');
+      
+      // Check if device is mobile
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      
+      if (isMobile) {
+        window.location.href = `tel:${phone}`;
+      } else {
+        // For desktop: Copy number to clipboard
+        navigator.clipboard.writeText(phone).then(() => {
+          alert('Phone number copied to clipboard!');
+        }).catch(() => {
+          alert('Please call us at: ' + phone);
+        });
+      }
+    });
+  }
+
+  // Add this at the end of your script
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(registration => {
+          console.log('ServiceWorker registration successful');
+        })
+        .catch(err => {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+  }
 });
 
 const initTextAnimation = () => {
