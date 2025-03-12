@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AS Edit</title>
+    <title>web test</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="style.css" as="style">
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body class="dark-mode">
     <!-- Header & Navigation -->
@@ -39,7 +49,7 @@
             <div class="hero-content">
                 <div class="profile-card">
                     <div class="profile-image">
-                        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTKqIg3pZGnGVuDbO7piYwe2EBzDMOcMohDv5sIWQ-tnD7ruRla" alt="placeholder">
+                        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTKqIg3pZGnGVuDbO7piYwe2EBzDMOcMohDv5sIWQ-tnD7ruRla" alt="placeholder" loading="lazy">
                     </div>
                     <h3 class="profile-name">Abhijeet Singh</h3>
                     <p class="profile-description">A Multimedia Designer who has developed countless innovative solutions.</p>
@@ -80,7 +90,7 @@
                 <!-- Short Films -->
                 <div class="portfolio-item short-films" data-category="short-films">
                     <div class="portfolio-thumb">
-                        <img src="https://marketplace.canva.com/EAFTl0ixW_k/1/0/1131w/canva-black-white-minimal-alone-movie-poster-YZ-0GJ13Nc8.jpg" alt="Short Film Project">
+                        <img src="https://marketplace.canva.com/EAFTl0ixW_k/1/0/1131w/canva-black-white-minimal-alone-movie-poster-YZ-0GJ13Nc8.jpg" alt="Short Film Project" loading="lazy">
                         <div class="overlay">
                             <div class="content">
                                 <h3>"The Last Light"</h3>
@@ -92,7 +102,7 @@
                 </div>
                 <div class="portfolio-item short-films" data-category="short-films">
                     <div class="portfolio-thumb">
-                        <img src="https://indigomusic.com/wp-content/uploads/2024/08/Split-movie-poster-663x1024.jpg" alt="Short Film Project">
+                        <img src="https://indigomusic.com/wp-content/uploads/2024/08/Split-movie-poster-663x1024.jpg" alt="Short Film Project" loading="lazy">
                         <div class="overlay">
                             <div class="content">
                                 <h3>"Echoes"</h3>
@@ -106,7 +116,7 @@
                 <!-- Commercials -->
                 <div class="portfolio-item commercials" data-category="commercials">
                     <div class="portfolio-thumb">
-                        <img src="https://posterhouse.org/wp-content/uploads/2021/05/moonlight_0.jpg" alt="Commercial Project">
+                        <img src="https://posterhouse.org/wp-content/uploads/2021/05/moonlight_0.jpg" alt="Commercial Project" loading="lazy">
                         <div class="overlay">
                             <div class="content">
                                 <h3>FitLife Pro</h3>
@@ -118,7 +128,7 @@
                 </div>
                 <div class="portfolio-item commercials" data-category="commercials">
                     <div class="portfolio-thumb">
-                        <img src="https://cdn.prod.website-files.com/6009ec8cda7f305645c9d91b/66a4263d01a185d5ea22eeda_6408f76710a9935109f855d4_smile-min.png" alt="Commercial Project">
+                        <img src="https://cdn.prod.website-files.com/6009ec8cda7f305645c9d91b/66a4263d01a185d5ea22eeda_6408f76710a9935109f855d4_smile-min.png" alt="Commercial Project" loading="lazy">
                         <div class="overlay">
                             <div class="content">
                                 <h3>EcoSmart Tech</h3>
@@ -132,7 +142,7 @@
                 <!-- Music Videos -->
                 <div class="portfolio-item music-videos" data-category="music-videos">
                     <div class="portfolio-thumb">
-                        <img src="https://i0.wp.com/wherecreativityworks.com/wp-content/uploads/2021/03/1DE580A8-7DC3-4D44-8111-41757F179D2E.jpeg?ssl=1" alt="Music Video Project">
+                        <img src="https://i0.wp.com/wherecreativityworks.com/wp-content/uploads/2021/03/1DE580A8-7DC3-4D44-8111-41757F179D2E.jpeg?ssl=1" alt="Music Video Project" loading="lazy">
                         <div class="overlay">
                             <div class="content">
                                 <h3>"Midnight Dreams" - The Echoes</h3>
@@ -144,7 +154,7 @@
                 </div>
                 <div class="portfolio-item music-videos" data-category="music-videos">
                     <div class="portfolio-thumb">
-                        <img src="https://www.indiewire.com/wp-content/uploads/2019/12/us-1.jpg?w=758" alt="Music Video Project">
+                        <img src="https://www.indiewire.com/wp-content/uploads/2019/12/us-1.jpg?w=758" alt="Music Video Project" loading="lazy">
                         <div class="overlay">
                             <div class="content">
                                 <h3>"Higher Ground" - Nova</h3>
@@ -171,7 +181,7 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-img">
-                    <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTvZ7kU4XAxpJt1CrchjMN3-ITGICA_-PVLguAEn0Knr93_zmhDrEHSEQGlwb897VVQidffqmPosfDFN5Y_Ql_FB4y8ac2NDT-R5ErfPw" alt="Jason Smith - Video Editor">
+                    <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTvZ7kU4XAxpJt1CrchjMN3-ITGICA_-PVLguAEn0Knr93_zmhDrEHSEQGlwb897VVQidffqmPosfDFN5Y_Ql_FB4y8ac2NDT-R5ErfPw" alt="Jason Smith - Video Editor" loading="lazy">
                 </div>
                 <div class="about-text">
                     <span class="subtitle">About Me</span>
@@ -291,24 +301,24 @@
                         <i class="fas fa-envelope"></i>
                     </div>
                     <h3>Email</h3>
-                    <p>hello@jasonsmith.com</p>
-                    <a href="mailto:hello@jasonsmith.com" class="contact-link">Send Email</a>
+                    <p>gaurav070kumar2005@gmail.com</p>
+                    <a href="mailto:gaurav070kumar2005@gmail.com" class="contact-link">Send Email</a>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fas fa-phone"></i>
                     </div>
                     <h3>Phone</h3>
-                    <p>(555) 123-4567</p>
-                    <a href="tel:5551234567" class="contact-link">Call Now</a>
+                    <p>(+91) 9311858381</p>
+                    <a href="tel:+91 9311858381" class="contact-link">Call Now</a>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <h3>Location</h3>
-                    <p>Los Angeles, CA</p>
-                    <a href="#" class="contact-link">View Map</a>
+                    <p>Mumbai, CA</p>
+                    <a href="https://www.google.com/maps?q=Mumbai+India" target="_blank" class="contact-link">View Map</a>
                 </div>
             </div>
             <div class="contact-form-container">
