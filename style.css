@@ -9,7 +9,7 @@
 /* Reset & Basics */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 0; font-size: 16px; }
-body { font-family: 'Poppins', sans-serif; line-height: 1.6; transition: background-color var(--transition), color var(--transition); }
+body { font-family: 'Poppins', sans-serif; line-height: 1.6; transition: background-color var(--transition), color var(--transition); overflow-x: hidden; }
 body.light-mode { background-color: var(--bg-light); color: var(--text-light); }
 body.dark-mode { background-color: var(--bg-dark); color: var(--text-dark); }
 .container { width: 90%; max-width: var(--container-width); margin: 0 auto; padding: 0 20px; }
